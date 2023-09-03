@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/31.3478cb55.chunk.css","mappings":"AAAA,2BAGK,eAAgB,CADjB,eAEJ","sources":["components/CastList.jsx/CastList.module.css"],"sourcesContent":[".castList{\n\n    margin-top: 20px;\n     list-style: none;\n}\n\n.castItem{\n   \n}"],"names":[],"sourceRoot":""}
