@@ -1,0 +1,13 @@
+
+.moviesList{
+    display: inline-block;
+}
+
+.listLink{
+    color: inherit;
+}
+
+.listLink:focus,
+.listLink:hover{
+    color: blue ;
+}

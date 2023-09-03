@@ -1,0 +1,19 @@
+
+.movieInfoContainner{
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.movieInfoText{
+    margin-left: 15px;
+}
+
+.genresList{
+    display: flex;
+    
+}
+
+.genreItem:not(:last-child){
+    margin-right: 20px;
+}
