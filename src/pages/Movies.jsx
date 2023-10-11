@@ -9,7 +9,6 @@ const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const movieName = searchParams.get('name') ?? '';
   const [movies, setMovies] = useState([]);
-  const [isEmpty, setIsEmpty] = useState(null);
 
   useEffect(() => {
     if (movieName === '') {
@@ -18,14 +17,7 @@ const Movies = () => {
 
     searchMovie(movieName)
       .then(({ data: { results } }) => {
-        if (results.length === 0) {
-          setIsEmpty(true);
-          setMovies([]);
-          return;
-        }
-
         setMovies(results);
-        setIsEmpty(false);
       })
       .catch(error => console.log(error));
   }, [movieName]);
@@ -41,7 +33,7 @@ const Movies = () => {
     <main>
       <section className={css.section}>
         <SearchBox submitQuery={submitQuery} />
-        {isEmpty && <h1>No match</h1>}
+        {movies.length === 0 && <h1>No match</h1>}
         <MoviesList movies={movies} />
       </section>
     </main>

@@ -39,5 +39,11 @@ export const MovieInfo = ({ movie }) => {
 };
 
 MovieInfo.propTypes = {
-  movie: PropTypes.object.isRequired,
+  movie: PropTypes.shape({
+    poster_path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    overview: PropTypes.string.isRequired,
+    release_date: PropTypes.string.isRequired,
+    genres: PropTypes.array.isRequired,
+  }),
 };
