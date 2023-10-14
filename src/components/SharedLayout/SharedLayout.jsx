@@ -7,10 +7,18 @@ const SharedLayout = () => {
     <>
       <header className={css.header}>
         <nav>
-          <NavLink className={css.navLink} to="/">
+          <NavLink
+            className={css.navLink}
+            to="/"
+            activestyle={{ color: 'red' }}
+          >
             Home
           </NavLink>
-          <NavLink className={css.navLink} to="/movies">
+          <NavLink
+            className={css.navLink}
+            to="/movies"
+            activestyle={{ color: 'red' }}
+          >
             Movies
           </NavLink>
         </nav>

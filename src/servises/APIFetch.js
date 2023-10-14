@@ -1,27 +1,43 @@
 import axios from 'axios';
 
-const APIKEY = 'd063a3c1ffdc1b15e46a20f479fc1290';
-const BASEURL = 'https://api.themoviedb.org/3/';
+const instanse = axios.create({
+  baseURL: 'https://api.themoviedb.org/3',
+  params: {
+    api_key: 'd063a3c1ffdc1b15e46a20f479fc1290',
+  },
+});
+
+const APIKEY = '';
+const BASEURL = '/';
 export const IMAGEBASEURL = 'https://image.tmdb.org/t/p/w500';
 
-export function getPopularMovies() {
-  return axios.get(`${BASEURL}trending/movie/day?api_key=${APIKEY}`);
+export async function getPopularMovies() {
+  const { data } = await instanse.get(`trending/movie/day`);
+  return data;
 }
 
-export function getMovieById(movieId) {
-  return axios.get(`${BASEURL}movie/${movieId}?api_key=${APIKEY}`);
+export async function getMovieById(movieId) {
+  const { data } = await instanse.get(`movie/${movieId}`);
+  return data;
 }
 
-export function getMovieCast(movieId) {
-  return axios.get(`${BASEURL}movie/${movieId}/credits?api_key=${APIKEY}`);
+export async function getMovieCast(movieId) {
+  const { data } = await instanse.get(`movie/${movieId}/credits`);
+  return data;
 }
 
-export function getMovieReviews(movieId) {
-  return axios.get(`${BASEURL}movie/${movieId}/reviews?api_key=${APIKEY}`);
+export async function getMovieReviews(movieId) {
+  const { data } = await instanse.get(`movie/${movieId}/reviews`);
+  return data;
 }
 
-export function searchMovie(name) {
-  return axios.get(
-    `${BASEURL}search/movie?query=${name}&include_adult=false&language=en-US&page=1&api_key=${APIKEY}`
-  );
+export async function searchMovie(name) {
+  const params = {
+    query: name,
+    include_adults: false,
+    language: 'es-US',
+    page: 1,
+  };
+  const { data } = await instanse.get(`search/movie`, { params });
+  return data;
 }

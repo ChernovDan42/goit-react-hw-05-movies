@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     getPopularMovies()
       .then(res => {
-        setPopularMovies(res.data.results);
+        setPopularMovies(res.results);
       })
       .catch(error => console.log(error));
   }, []);

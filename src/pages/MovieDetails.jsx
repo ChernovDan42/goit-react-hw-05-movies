@@ -12,7 +12,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     getMovieById(movieId)
-      .then(res => setMovieData(res.data))
+      .then(res => setMovieData(res))
       .catch(error => console.log(error));
   }, [movieId]);
 

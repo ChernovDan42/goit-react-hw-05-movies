@@ -42,6 +42,9 @@ ol {
 }
 
 a {
-
   color: inherit;
+}
+
+a.active{
+  color:blueviolet
 }

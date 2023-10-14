@@ -17,7 +17,7 @@ const Movies = () => {
     }
 
     searchMovie(movieName)
-      .then(({ data: { results } }) => {
+      .then(({ results }) => {
         if (results.length === 0) {
           setIsEmpty(true);
           setMovies(results);
